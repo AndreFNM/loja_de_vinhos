@@ -1,18 +1,18 @@
 <%@ page import="java.sql.*" %>
 <%
     String email = request.getParameter("email");
-    String password = request.getParameter("password");
+    String pass = request.getParameter("pass");
 
-    if (email != null && password != null) {
+    if (email != null && pass != null) {
         String url = "jdbc:mysql://localhost:3306/loja_de_vinhos";
         String user = "root";
-        String pass = "roots";
-        Connection conn = DriverManager.getConnection(url, user, pass);
+        String password = "roots";
+        Connection conn = DriverManager.getConnection(url, user, password);
 
-        String sql = "SELECT * FROM cliente WHERE email=? AND password=?";
+        String sql = "SELECT * FROM cliente WHERE email=? AND pass=?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, email);
-        statement.setString(2, password);
+        statement.setString(2, pass);
         ResultSet result = statement.executeQuery();
 
         if (result.next()) {
@@ -21,7 +21,7 @@
             response.sendRedirect("main.jsp");
             return;
         } else {
-            request.setAttribute("errorMessage", "Incorrect email or password.");
+            request.setAttribute("errorMessage", "Password ou email incorretos.");
         }
     }
 %>
@@ -50,7 +50,7 @@
     <input class="box" type="text" id="email" name="email"  ><br>
 
     <label for="pass"><h2>Palavra-passe:</h2></label>
-    <input class="box" type="password" id="pass" name="password" ><br>
+    <input class="box" type="password" id="pass" name="pass" ><br>
 
 
     <div>
@@ -63,7 +63,7 @@
     <input type="submit" value="Login" class="botao-login"><br>
 
 
-    <br><a href="register.jsp" target="_self">
+    <a href="register.jsp" target="_self">
         <button class="botao-registe-se">Registe-se</button>
     </a>
 
