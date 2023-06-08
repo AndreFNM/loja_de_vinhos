@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+/* CSS documento */
+body {
+	background-color: #E8E8E8;
+}
+
+.retangulo_principal {
+	background-color: white;
+	border: 1px solid black;
+	position: relative;
+	width: 100%;
+	height: 970px;
+}
+
+#canto_esquedo {
+	width: 15%;
+	height: 100%;
+	float: left;
+	display: block;
+
+}
+
+#dados_pessais {
+	width: 85%;
+	height: 190px;
+	top: 8px;
+	margin-left: 228px;
+	position: absolute;
+}
+
+#dados_do_contrato {
+	width: 85%;
+	height: 209px;
+	margin-left: 228px;
+	position: absolute;
+	top: 192px;
+	
+}
+
+#Oberservações {
+	width: 85%;
+	height: 367px;
+	margin-left: 228px;
+	position: absolute;
+	bottom: 200px;
+}
+
+.dadope {
+	margin-left: 10px;
+	border: 1px solid black;
+	height: 125px;
+	width: 100%;
+	display: flex;
+}
+
+
+
+.dadosco {
+	margin-left: 10px;
+	border: 1px solid black;
+	height: 125px;
+	width: 100%;
+	display: flex;
+}
+
+.retangulo_principal button {
+	width: 200px;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.retangulo_principal img {
+	width: 200px;
+	margin-left: 15px;
+	margin-top: 50px;
+}
+
+.coluna_2 label {
+	display: block; 
+}
+
+.coluna label {
+	display: block; 
+}

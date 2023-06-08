@@ -1,0 +1,78 @@
+@charset "ISO-8859-1";
+*{
+    font-family: Mangarans;
+}
+
+#login-continuar{
+    margin-top: 200px;
+}
+
+.esquecida{
+    margin-top: 300px;
+}
+
+.esquecida-botao{
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+p{
+    text-align: center;
+    font-size: larger;
+    
+}
+
+.login-form{ 
+    text-align: center;
+}
+
+.box{
+    
+    background-color: #DFC2E5;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    padding: 15px 90px;
+    
+}
+
+.botao-login{ 
+    background-color: #CE39EA;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    padding: 15px 100px;
+}
+
+.botao-registe-se:hover{
+    color: white;
+    background-color: #CE39EA;
+}
+
+.botao-registe-se{
+    background-color: #F2EEF3;
+    border-radius: 20px;
+    border-color:  #CE39EA;
+    font-size: 22px;
+    padding: 15px 76px;
+    
+}
+
+.date-box{
+    background-color: #DFC2E5;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    padding: 15px 129px;
+}

@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+body {
+	background-color: #E8E8E8;
+}
+.box {
+	position: relative;
+	text-align: left;
+	width: 450px;
+	height: 550px;
+	left: 40%;
+	margin-top: 200px;
+}
+
+.box button {
+	width: 150px;
+}

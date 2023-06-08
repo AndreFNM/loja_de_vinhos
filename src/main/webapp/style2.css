@@ -1,0 +1,599 @@
+@charset "ISO-8859-1";
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mangarans;
+    
+}
+
+
+body{
+    background: white;
+}
+
+
+#texto-esquecida{
+    text-align: center;
+    font-size: larger;
+}
+
+.wrapped,.sidebar{
+    background: #DFC2E5;
+    position: fixed;
+
+    width: 320px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.imgProfile{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.imgCarrinho{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    width: 70px;
+    height: 70px;
+    
+}
+
+.procurar-texto{
+    margin-top: 180px;
+    margin-left: 40px;
+}
+
+
+.barraPesquisa input[type=text]{
+    margin-left: 20px;
+    margin-top: 0px;
+    width: 275px;
+    border-radius: 25px 25px 25px 25px;
+    border: none;
+    padding: 6px;
+    
+}
+
+
+.tipo-texto{
+    margin-top: 90px;
+    margin-left: 40px;
+}
+
+#tipo{
+    margin-left: 20px;
+    padding-left: 60px;
+    text-align: left;
+    width: 275px;
+    height: 25px;
+
+    border: 0px;
+    outline:none;
+    border-radius: 20px;  
+}
+
+.regiao-texto{
+    margin-top: 50px;
+    margin-left: 40px;    
+}
+
+#regiao{
+    margin-left: 20px;
+    padding-left: 60px;
+    text-align: left;
+    width: 275px;
+    height: 25px;
+
+    border: 0px;
+    outline:none;
+    border-radius: 20px;
+}
+
+.estilo-texto{
+    margin-top: 50px;
+    margin-left: 40px; 
+}
+
+#estilo{
+    margin-left: 20px;
+    padding-left: 60px;
+    text-align: left;
+    width: 275px;
+    height: 25px;
+
+    border: 0px;
+    outline:none;
+    border-radius: 20px;
+}
+
+.preco-texto{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+#preco{
+    margin-left: 20px;
+    padding-left: 60px;
+    text-align: left;
+    width: 275px;
+    height: 25px;
+
+    border: 0px;
+    outline:none;
+    border-radius: 20px;
+}
+
+#mail{
+    margin-top: -22px;
+    text-align: center;
+    color: black;
+}
+
+#numero{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#imagem-mail{
+    margin-top: 100px;
+    margin-left: 19px;
+    width:10%
+
+}
+
+#numero{
+    margin-top: -28px;
+}
+
+#imagem-phone{
+    margin-top: 12px;
+    margin-left: 80px;
+    width:10%
+}
+
+
+.slides{
+    margin-left: 500px;
+    margin-top: 60px;
+    width: 45%; 
+    border-radius: 20px;
+    
+}
+
+#imgPromo1{
+    margin-bottom: 244px;
+    width: 20%;
+    height: 238px;
+    border-radius: 20px;
+    
+}
+
+#imgPromo2{
+    margin-left: 1362px;
+    margin-top: -244px;
+    margin-bottom: 100px;
+    width: 380px;
+    height: 240px;
+    border-radius: 20px;
+    
+}
+
+#novidades-texto{
+    margin-left: 505px;
+}
+
+
+
+
+.vinhos{
+    margin-left: 350px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+
+
+.vinho{
+    text-align: center;
+    
+}
+
+.botao-compra{
+    margin-top: 10px;
+    background-color: #CE39EA;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    padding: 5px 10px;
+    margin-bottom: 100px;
+    
+}
+
+
+#Resultado-pesquisas{
+    margin-left: 400px;
+    
+}
+
+.paginacao {
+    margin-left: 1570px;
+    margin-top: -20px;
+    display: inline-block;
+}
+  
+  .paginacao a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+  .paginacao a.ativo {
+    background-color: #CE39EA;
+    color: white;
+    border-radius: 5px;
+}
+  
+  .paginacao a:hover:not(.ativo) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+  .organizador-pesquisas{
+    margin-left: 350px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: lightgrey;
+    width: 1500px;
+    border: 2px solid #CE39EA;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+#ordernar{
+    padding: 7px;
+}
+
+.box-ordernar{
+    text-align: right;
+    margin-top: -17px;
+   
+    
+}
+
+#ordenar-por{
+    margin-left: 1220px;
+    margin-bottom: -10px;
+}
+
+
+
+#quantidade-resultados{
+    margin-bottom: -10px;
+}
+
+#botao-aplicar{
+    margin-left: 20px;
+    margin-top: 27%;
+    width: 275px;
+    height: 30px;
+    background-color: #CE39EA;
+    color: white;
+    
+    border: 0px;
+    outline: none;
+    border-radius: 20px;
+    
+}
+
+#vinho-sozinho{
+    margin-left: 100px;
+    height: 600px;
+    margin-top: 100px;
+    
+}
+
+#titulo-vinho{
+    margin-left: 980px;
+    margin-top: -600px;
+    
+}
+
+#preco-tag{
+    margin-top: 30px;
+    margin-left: 980px;
+    font-size: 30px;
+    
+}
+
+#descricao{
+    margin-top: 30px;
+    margin-left: 980px;
+    margin-right: 200px;
+    float: left;
+    font-size: 17px;
+}
+
+#capacidade-texto{
+    margin-left: 980px;
+    margin-top: 250px;
+}
+
+#capacidade{
+    margin-left: 1021px;
+    font-size: 20px;
+}
+
+#familia-texto{
+    margin-left: 1150px;
+    margin-top: -50px;
+}
+
+#familia{
+    margin-left: 1160px;
+    font-size: 20px;
+}
+
+#alcool-texto{
+   margin-left: 1340px;
+   margin-top: -50px;
+}
+
+#alcool{
+    margin-left: 1400px;
+    font-size: 20px;
+}
+
+#regiao-texto{
+    margin-left: 1540px;
+    margin-top: -50px;
+}
+
+#regiao-descricao{
+    margin-left: 1550px;
+    font-size: 20px;
+}
+
+#quatidade-vinhos{
+    margin-left: 980px;
+    margin-top: 40px;
+    padding: 10px 1px 10px 1px;
+    outline: none;
+    border-radius: 8px;
+    border-color:#DFC2E5;
+}
+
+#adicionar-carrinho{
+    margin-top: -90px;
+    margin-left: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: #CE39EA;
+    color: white;
+    
+    border: 0px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.circulos{
+    text-align: center;
+}
+
+.circulo-carrinho{
+    height: 70px;
+    width: 70px;
+    background-color: #CE39EA;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circulo {
+    height: 70px;
+    width: 70px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#produtos{
+    margin-left: 97px;
+    margin-top: 150px;
+}
+
+#linha{
+    width: 90%; 
+    margin-left: 5%;
+}
+
+#img-produtos{
+    margin-left: 100px;
+    height: 5%;
+    width: 5%;
+    margin-bottom: 20px;
+    margin-top: -120px;
+    
+}
+
+#nome-vinho{
+    margin-left: 300px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#carrinho-quatidade-vinhos{
+    margin-left: 300px;
+
+    
+    padding: 10px 1px 10px 1px;
+    outline: none;
+    border-radius: 8px;
+    border-color:#DFC2E5;
+}
+
+#botao-remover{
+   
+    background-color: #CE39EA;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+    padding: 12px 15px;
+    
+}
+
+
+#carrinho-preco{
+    text-align: right;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+#valor-total{
+    text-align: right;
+    margin-right: 110px;
+    font-size: 20px;
+}
+
+#botao-continuar{
+    margin-left: 1650px;
+    width: 175px;
+    height: 40px;
+    background-color: #CE39EA;
+    color: white;
+    
+    border: 0px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+#linha2{
+    
+    width: 50%; 
+    margin-left: 25%;
+}
+
+#linha3{
+    margin-top: 30px;
+    width: 50%; 
+    margin-left: 25%;
+}
+
+#num-cartao{
+    margin-left: 500px; 
+    
+    background-color: #DFC2E5;
+    border-radius: 9px;
+    border: none;
+    font-size: 22px;
+    padding: 5px 1px;
+}
+
+#num-cartao-texto{
+    margin-left: 510px;
+}
+
+#data-validade{
+    margin-left: 840px;
+    margin-top: -54px;
+}
+
+#data-cartao{
+    margin-left: 830px;
+
+    background-color: #DFC2E5;
+    border-radius: 9px;
+    border: none;
+    font-size: 22px;
+    padding: 5px 1px;
+}
+
+#codigo-seg-texto{
+    margin-left: 1160px;
+    margin-top: -54px
+}
+
+#codigo-seguranca{
+    margin-left: 1150px;
+
+    background-color: #DFC2E5;
+    border-radius: 9px;
+    border: none;
+    font-size: 22px;
+    padding: 5px 1px;
+}
+
+#confirmar-compra{
+    margin-left: 500px;
+}
+
+#confirmar-compra{
+    background-color: #CE39EA;
+    color: white;
+    border-radius: 9px;
+    border: none;
+    font-size: 22px;
+    padding: 15px 150px;    
+}
+
+#compra-concluida{
+    text-align: center;
+    margin-top: 200px;
+}
+
+#certo{
+    height: 10%;
+    width: 10%;
+    margin-top: 30px;
+    margin-left: 860px;
+    
+}
+
+#download-recibo{
+   margin-left: 825px;
+   margin-top: 30px; 
+   
+   background-color: #DFC2E5;
+   color: black;
+   border-radius: 9px;
+   border: none;
+   font-size: 22px;
+   padding: 15px 50px; 
+}
+
+.voltar-loja{
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 850px;
+}
+
+#info-pagamento{
+    margin-left: 485px;
+    margin-top: 150px;
+}
