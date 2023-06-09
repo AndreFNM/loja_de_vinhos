@@ -43,7 +43,7 @@
 <%
     }
 %>
-<form class="login-form" method="post" action="index.jsp">
+<form class="login-form" method="post" action="">
 
 
     <label for="email"><h2>Email:</h2></label>
