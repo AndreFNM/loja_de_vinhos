@@ -1,5 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%
+    int nif_cliente = (int) session.getAttribute("NIF");
+
+    String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
+    String dbUser = "root";
+    String dbPassword = "roots";
+
+    // Create a connection to the database
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+
+    String sql = "SELECT * FROM cliente WHERE  NIF = ?";
+    PreparedStatement stmt = conn.prepareStatement(sql);
+    stmt.setString(1, "%" + nif_cliente + "%");
+
+    ResultSet rs = stmt.executeQuery();
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +32,10 @@
             <div class="sidebar">
                 <!--imagem de perfil-->
                 <div class="profile">
-                    <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Perfil">
+                    <% String info_cliente = "conta-cliente.jsp?NIF=" + nif_cliente; %>
+                    <a href="<%= info_cliente %>" >
+                        <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Perfil">
+                    </a>
                     <img class="imgCarrinho" src="imagens/carrinho.png" alt="imagem do carrinho" title="carrinho de compras">
                 </div>
                 <!--MENU DE PESQUISAS-->
@@ -123,3 +144,10 @@
         </section>
     </body>
 </html>
+
+<%
+    // Close the database resources
+    rs.close();
+    stmt.close();
+    conn.close();
+%>

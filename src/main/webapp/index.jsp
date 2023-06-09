@@ -17,8 +17,10 @@
         ResultSet result = statement.executeQuery();
 
         if (result.next()) {
+            int nif_cliente = result.getInt("NIF");
             HttpSession sessions = request.getSession();
             sessions.setAttribute("email", email);
+            sessions.setAttribute("NIF",nif_cliente);
             response.sendRedirect("main.jsp");
             return;
         } else {
