@@ -7,6 +7,7 @@
         String url = "jdbc:mysql://localhost:3306/loja_de_vinhos";
         String user = "root";
         String password = "roots";
+        Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, user, password);
 
         String sql = "SELECT * FROM cliente WHERE email=? AND pass=?";
@@ -43,7 +44,7 @@
 <%
     }
 %>
-<form class="login-form" method="post" action="">
+<form class="login-form" method="post" action="index.jsp">
 
 
     <label for="email"><h2>Email:</h2></label>
