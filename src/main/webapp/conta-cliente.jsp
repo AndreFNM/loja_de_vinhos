@@ -2,40 +2,33 @@
          pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-  // Get the product ID from the query parameter
+
   String cliente_nif = request.getParameter("NIF");
 
-  // Define the database connection parameters
+
   String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
   String dbUser = "root";
   String dbPassword = "roots";
 
-  // Create a connection to the database
+
   Class.forName("com.mysql.jdbc.Driver");
   Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-  // Prepare the SQL query
+
   String sql = "SELECT * FROM cliente WHERE NIF = ?";
 
   PreparedStatement stmt = conn.prepareStatement(sql);
   stmt.setString(1, cliente_nif);
 
-
-
-  // Execute the query
   ResultSet rs = stmt.executeQuery();
 
-
-  // Check if the product exists
   while (rs.next()) {
     String nome_cliente = rs.getString("nome");
     String data_nascimento_cliente = rs.getString("data_nascimento");
     String morada_cliente = rs.getString("morada");
     String pass_cliente = rs.getString("pass");
     String email_cliente = rs.getString("email");
-      // Add more product attributes as needed
 
-      // Display the product details
 %>
 
 <!DOCTYPE html>
