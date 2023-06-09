@@ -16,7 +16,6 @@
 
 
   String sql = "SELECT * FROM cliente WHERE NIF = ?";
-
   PreparedStatement stmt = conn.prepareStatement(sql);
   stmt.setString(1, cliente_nif);
 
@@ -60,12 +59,40 @@
 <body>
 <h1>Informação da Conta</h1>
 
-<div class="info-conta">
-  <p><strong>Nome:</strong><%=nome_cliente%></p>
-  <p><strong>Data de Nascimento:</strong> <%= data_nascimento_cliente %></p>
-  <p><strong>Morada:</strong><%=morada_cliente%></p>
-  <p><strong>Pass:</strong><%=pass_cliente%></p>
-  <p><strong>Email:</strong><%=email_cliente%></p>
+<div class="account-info">
+  <p><span class="info-label">Nome:</span> <%= nome_cliente %></p>
+  <p><span class="info-label">Data de nascimento:</span> <%= data_nascimento_cliente %></p>
+  <p><span class="info-label">Morada:</span> <%= morada_cliente%></p>
+  <p><span class="info-label">Pass:</span> <%= pass_cliente %></p>
+  <p><span class="info-label">Email:</span> <%= email_cliente %></p>
+</div>
+
+<div class="edit-form">
+  <h2>Edit Account Information</h2>
+  <form method="post" action="update.jsp">
+    <label class="form-label" for=<%=nome_cliente%>>Nome:</label>
+    <input class="form-input" type="text" name="name" value="<%= nome_cliente %>">
+
+    <label class="form-label" for=<%=data_nascimento_cliente%>>Data de nascimento:</label>
+    <input class="form-input" type="text" name="data_nascimento" value="<%= data_nascimento_cliente %>">
+
+    <label class="form-label" for=<%=morada_cliente%>>Morada:</label>
+    <input class="form-input" type="text" name="morada" value="<%= morada_cliente %>">
+
+    <label class="form-label" for=<%=pass_cliente%>>Pass:</label>
+    <input class="form-input" type="text" name="pass" value="<%= pass_cliente %>">
+
+    <input type="hidden" name="cliente_nif" value="<%= cliente_nif %>">
+    <input type="submit" value="Save Changes">
+  </form>
+</div>
+
+<div class="delete-form">
+  <h2>Delete Account</h2>
+  <form method="post" action="delete.jsp">
+    <input type="hidden" name="cliente_nif" value="<%= cliente_nif %>">
+    <input type="submit" value="Delete Account">
+  </form>
 </div>
 </body>
 </html>
