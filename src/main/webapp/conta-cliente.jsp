@@ -71,7 +71,7 @@
   <h2>Edit Account Information</h2>
   <form method="post" action="update.jsp">
     <label class="form-label" for=<%=nome_cliente%>>Nome:</label>
-    <input class="form-input" type="text" name="name" value="<%= nome_cliente %>">
+    <input class="form-input" type="text" name="nome" value="<%= nome_cliente %>">
 
     <label class="form-label" for=<%=data_nascimento_cliente%>>Data de nascimento:</label>
     <input class="form-input" type="text" name="data_nascimento" value="<%= data_nascimento_cliente %>">
