@@ -65,11 +65,12 @@
 
     <input type="submit" value="Login" class="botao-login"><br>
 
-
     <a href="register.jsp" target="_self">
         <button class="botao-registe-se">Registe-se</button>
     </a>
 
+
 </form>
+
 </body>
 </html>
