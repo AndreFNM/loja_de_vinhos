@@ -27,7 +27,7 @@
     String morada_cliente = rs.getString("morada");
     String pass_cliente = rs.getString("pass");
     String email_cliente = rs.getString("email");
-
+    String nif_cliente = rs.getString("NIF");
 %>
 
 <!DOCTYPE html>
@@ -65,6 +65,7 @@
   <p><span class="info-label">Morada:</span> <%= morada_cliente%></p>
   <p><span class="info-label">Pass:</span> <%= pass_cliente %></p>
   <p><span class="info-label">Email:</span> <%= email_cliente %></p>
+  <p><span class="info-label" name ="nif">NIF:</span> <%= nif_cliente %></p>
 </div>
 
 <div class="edit-form">
@@ -98,10 +99,7 @@
 </html>
 
 <%
-    }
-
-
-  // Close the database resources
+  }
   rs.close();
   stmt.close();
   conn.close();
