@@ -2,32 +2,32 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-    // Get the product ID from the query parameter
+
     String productoId = request.getParameter("id_vinho");
 
-    // Define the database connection parameters
+
     String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
     String dbUser = "root";
     String dbPassword = "roots";
 
-    // Create a connection to the database
+
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-    // Prepare the SQL query
+
     String sql = "SELECT * FROM vinho WHERE id_vinho = ?";
     String sql2 = "select * from garrafa where vinho in (select id_vinho from vinho where id_vinho = ?);";
     PreparedStatement stmt = conn.prepareStatement(sql);
     stmt.setString(1, productoId);
-    String vinhoID = request.getParameter("vinho");
+    //String vinhoID = request.getParameter("vinho");
     PreparedStatement stmt2 = conn.prepareStatement(sql2);
     stmt2.setString(1,productoId);
 
-    // Execute the query
+
     ResultSet rs = stmt.executeQuery();
     ResultSet rs2 = stmt2.executeQuery();
 
-    // Check if the product exists
+
     while (rs.next()) {
         String nome_produto = rs.getString("nome");
         String regiao_produto = rs.getString("regiao");
@@ -39,11 +39,6 @@
         while(rs2.next()) {
             String preco_produto = rs2.getString("preco");
             String capacidade_produto = rs2.getString("capacidade");
-
-
-        // Add more product attributes as needed
-
-        // Display the product details
 %>
 
 
@@ -151,7 +146,6 @@
     }
     }
 
-    // Close the database resources
     rs.close();
     stmt.close();
     conn.close();

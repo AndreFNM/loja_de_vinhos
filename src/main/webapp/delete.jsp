@@ -32,7 +32,7 @@
 <h1>Delete Account</h1>
 
 <%
-    // Retrieve the user's NIF from the request parameter
+
     String cliente_nif = request.getParameter("cliente_nif");
 
     String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
@@ -46,13 +46,13 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-        // Prepare a query to delete the user's account
+
         String sql = "DELETE FROM cliente WHERE NIF = ?";
 
         stmt = conn.prepareStatement(sql);
         stmt.setString(1, cliente_nif);
 
-        // Execute the delete query
+
         stmt.executeUpdate();
 
 
@@ -61,9 +61,7 @@
     <p>Account deleted successfully.</p>
 </div>
 
-<div class="error-message">
-    <p>Failed to delete the account.</p>
-</div>
+
 <%
 
         stmt.close();

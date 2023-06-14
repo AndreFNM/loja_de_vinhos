@@ -56,18 +56,13 @@
     <input class="box" type="password" id="pass" name="pass" ><br>
 
 
-    <div>
-        <a href="pass-esquecida.jsp" target="_self">
-            <br><button class="esquecida-botao"><h3>password esquecida?</h3></button><br><br>
-        </a>
-    </div>
 
 
-    <input type="submit" value="Login" class="botao-login"><br>
+    <br><br><input type="submit" value="Login" class="botao-login"><br><br>
 
-    <a href="register.jsp" target="_self">
-        <button class="botao-registe-se">Registe-se</button>
-    </a>
+
+        <button class="botao-registe-se"><a href="register.jsp" >Registe-se</a></button>
+
 
 
 </form>

@@ -71,6 +71,8 @@
 
     <br><br><input type="submit" value="Registar" class="botao-login">
 
+        <br><br><button class="botao-registe-se"><a href="index.jsp" >Login</a></button>
+
 
 
 </form>
