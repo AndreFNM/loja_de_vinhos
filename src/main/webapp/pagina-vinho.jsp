@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-
+    int nif_cliente = (int) session.getAttribute("NIF");
     String productoId = request.getParameter("id_vinho");
 
 
@@ -19,7 +19,7 @@
     String sql2 = "select * from garrafa where vinho in (select id_vinho from vinho where id_vinho = ?);";
     PreparedStatement stmt = conn.prepareStatement(sql);
     stmt.setString(1, productoId);
-    //String vinhoID = request.getParameter("vinho");
+
     PreparedStatement stmt2 = conn.prepareStatement(sql2);
     stmt2.setString(1,productoId);
 
@@ -56,7 +56,10 @@
             <div class="sidebar">
                 <!--imagem de perfil-->
                 <div class="profile">
-                    <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Profile">
+                    <% String info_cliente = "conta-cliente.jsp?NIF=" + nif_cliente; %>
+                    <a href="<%= info_cliente %>" >
+                        <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Perfil">
+                    </a>
                     <img class="imgCarrinho" src="imagens/carrinho.png" alt="imagem do carrinho" title="carrinho de compras">
                 </div>
                 <!--MENU DE PESQUISAS-->
@@ -136,9 +139,18 @@
             <p id="alcool"><%=alccol_pruduto%>%</p>
             <h2 id="regiao-texto">Região</h2>
             <p id="regiao-descricao"><%=regiao_produto%></p>
-            <input type="number" id="quatidade-vinhos" value="1" min="1" max="999">
-            <button id="adicionar-carrinho">Adicionar ao Carrinho</button>
+
+
+            <form method="post" action="carrinho.jsp">
+                <input type="number" name="quantidade_compra" id="quatidade-vinhos" value="1" min="1" max="99">
+                <input type="hidden" name="id_vinho" value="<%=productoId%>">
+                <button id="adicionar-carrinho">Comprar Agora</button>
+            </form>
+
+
+
         </div>
+
     </body>
 </html>
 
