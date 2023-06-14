@@ -2,24 +2,26 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-    // Get the search term from the query parameter
+
+    int nif_cliente = (int) session.getAttribute("NIF");
+
     String vinho_pesquisado = request.getParameter("vinho_pesquisado");
 
-    // Define the database connection parameters
+
     String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
     String dbUser = "root";
     String dbPassword = "roots";
 
-    // Create a connection to the database
+
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-    // Prepare the SQL query
+
     String sql = "SELECT * FROM vinho WHERE nome LIKE ?";
     PreparedStatement stmt = conn.prepareStatement(sql);
     stmt.setString(1, "%" + vinho_pesquisado + "%");
 
-    // Execute the query
+
     ResultSet rs = stmt.executeQuery();
 %>
 <!DOCTYPE html>
@@ -36,7 +38,10 @@
             <div class="sidebar">
                 <!--imagem de perfil-->
                 <div class="profile">
-                    <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Perfil">
+                    <% String info_cliente = "conta-cliente.jsp?NIF=" + nif_cliente; %>
+                    <a href="<%= info_cliente %>" >
+                        <img class="imgProfile" src="imagens/profile-icon-9.png" alt="imagem de perfil" title="Perfil">
+                    </a>
                     <img class="imgCarrinho" src="imagens/carrinho.png" alt="imagem do carrinho" title="carrinho de compras">
                 </div>
                 <!--MENU DE PESQUISAS-->
@@ -142,7 +147,7 @@
 </html>
 
 <%
-    // Close the database resources
+
     rs.close();
     stmt.close();
     conn.close();
