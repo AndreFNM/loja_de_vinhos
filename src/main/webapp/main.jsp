@@ -13,10 +13,13 @@
     Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
     String sql = "SELECT * FROM cliente WHERE  NIF = ?";
+    String sql2 = "SELECT * FROM vinho";
     PreparedStatement stmt = conn.prepareStatement(sql);
+    PreparedStatement stmt2 = conn.prepareStatement(sql2);
     stmt.setString(1, "%" + nif_cliente + "%");
 
     ResultSet rs = stmt.executeQuery();
+    ResultSet rs2 = stmt2.executeQuery();
 %>
 <!DOCTYPE html>
 <html>
@@ -111,36 +114,13 @@
         </div>
         <h1 id="novidades-texto">Novidades</h1>
         <section class="vinhos">
+            <% while (rs2.next()) {%>
             <div class="vinho">    
-                <img src="imagens/VinhoTinto.png" height="400">
-                <p >VINHO TINTO PORTA DA  RAVESSA - ALENTEJO 2020</p>
+                <img src="<%=rs2.getString("imagensURl")%>" height="400">
+                <p ><%=rs2.getString("nome")%></p>
                 <button class="botao-compra">Comprar agora</button>
             </div>
-            <div class="vinho">
-                <img src="imagens/velhotes.jpg" height="400">
-                <p>Vinho do Porto</p>
-                <button class="botao-compra">Comprar agora</button>
-            </div>
-            <div class="vinho">
-                <img id="imgVinho3" src="imagens/espumantemurganheira.png" height="400">
-                <p>ESPUMANTE MURGANHEIRA RESERVA MEIO SECO</p>
-                <button class="botao-compra">Comprar agora</button>
-            </div>
-            <div class="vinho">    
-                <img src="imagens/VinhoTinto.png" height="400">
-                <p >VINHO TINTO PORTA DA  RAVESSA - ALENTEJO 2020</p>
-                <button class="botao-compra">Comprar agora</button>
-            </div>
-            <div class="vinho">
-                <img src="imagens/velhotes.jpg" height="400">
-                <p>Vinho do Porto</p>
-                <button class="botao-compra">Comprar agora</button>
-            </div>
-            <div class="vinho">
-                <img id="imgVinho3" src="imagens/espumantemurganheira.png" height="400">
-                <p>ESPUMANTE MURGANHEIRA RESERVA MEIO SECO</p>
-                <button class="botao-compra">Comprar agora</button>
-            </div>
+           <%}%>
         </section>
     </body>
 </html>

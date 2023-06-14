@@ -13,10 +13,14 @@
 	Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
 	String sql = "SELECT * FROM funcionarios WHERE  id_funcionario = ?";
+	String sql2 = "SELECT * FROM vinho";
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	stmt.setString(1, "%" + id_funcionario + "%");
+	PreparedStatement stmt2 = conn.prepareStatement(sql2);
+
 
 	ResultSet rs = stmt.executeQuery();
+	ResultSet rs2 = stmt2.executeQuery();
 %>
 <!doctype html>
 <html>
@@ -28,7 +32,7 @@
 <body>
 
 <div class="barra_superior">
-	<p>Nº de funcionaio</p>
+	<p>Nº de Funcionário: <%=id_funcionario%></p>
 </div>
 <div class="barra_lateral">
 	<a href="principal_funcionarios.jsp"><img src="imagens/lupa.png" style="width: 50px; margin-top: 45px;"></a><br>
@@ -41,56 +45,18 @@
 </form>
 <p style="margin-left: 85px;margin-top: 1px;">Pesquisa</p>
 
+
 <div class="quadrados">
+	<% while (rs2.next()) {%>
 	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
+		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="<%=rs2.getString("imagensURL") %>" style="height: 175px;"></a>
+		<div class="vinho__nome"><p><a>Nome do vinho: <%= rs2.getString("nome")%> </a></p></div>
+		<div class="vinho__preço"><p>Nº de identificação: <%= rs2.getInt("id_vinho") %> </p></div>
 	
 	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
-	<div class="vinho">
-		<a class="vinho__imagem" href="pagina_pesquisa_vinho.jsp"><img src="imagens/espumantemurganheira.png" style="height: 175px;"></a>
-		<div class="vinho__nome"><p><a>Nome do vinho: Reserva Meio Seco</a></p></div>
-		<div class="vinho__preço"><p>Nº de identificação: 654125</p></div>
-	
-	</div>
+	<%}%>
 </div>
+
 
 <div class="fundo">
 	<div class="separadores">
