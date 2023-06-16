@@ -36,7 +36,7 @@
 <div class="barra_lateral">
 	<a href="principal_funcionarios.jsp"><img src="imagens/lupa.png" style="width: 50px"></a><br>
 	<a href="funcionarios_registo.jsp"><img src="imagens/funcionarios.png" style="width: 50px; margin-top: 5px;"></a>
-	<a href="ecomenda_principal.jsp"><img src="imagens/ecomendas.png" style="width: 50px; margin-top: 5px;"></a>
+	<a href="pagina_ecomendas.jsp"><img src="imagens/ecomendas.png" style="width: 50px; margin-top: 5px;"></a>
 	<a href="site_estatisticas.jsp"><img src="imagens/estatisticas.png" style="width: 50px; margin-top: 5px;"></a>	
 </div>
 

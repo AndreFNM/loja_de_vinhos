@@ -2,24 +2,24 @@
          pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-    // Get the search term from the query parameter
+
     String vinho_pesquisa = request.getParameter("vinho_pesquisa");
 
-    // Define the database connection parameters
+
     String dbUrl = "jdbc:mysql://localhost:3306/loja_de_vinhos";
     String dbUser = "root";
     String dbPassword = "roots";
 
-    // Create a connection to the database
+
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-    // Prepare the SQL query
+
     String sql = "SELECT * FROM vinho WHERE nome LIKE ?";
     PreparedStatement stmt = conn.prepareStatement(sql);
     stmt.setString(1, "%" + vinho_pesquisa + "%");
 
-    // Execute the query
+
     ResultSet rs = stmt.executeQuery();
 %>
 <!doctype html>
@@ -37,7 +37,7 @@
 <div class="barra_lateral">
     <a href="principal_funcionarios.jsp"><img src="imagens/lupa.png" style="width: 50px; margin-top: 45px;"></a><br>
     <a href="site_ver_funcionarios.jsp"><img src="imagens/funcionarios.png" style="width: 50px; margin-top: 5px;"></a>
-    <a href="ecomenda_principal.jsp"><img src="imagens/ecomendas.png" style="width: 50px; margin-top: 5px;"></a>
+    <a href="pagina_ecomendas.jsp"><img src="imagens/ecomendas.png" style="width: 50px; margin-top: 5px;"></a>
     <a href="site_estatisticas.jsp"><img src="imagens/estatisticas.png" style="width: 50px; margin-top: 5px;"></a>
 </div>
 

@@ -8,7 +8,7 @@
 	String dbUser = "root";
 	String dbPassword = "roots";
 
-	// Create a connection to the database
+
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
